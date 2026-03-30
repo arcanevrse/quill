@@ -20,6 +20,7 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   font-size: 1em;
+  background: white;
 }
 
 button {
@@ -30,14 +31,16 @@ button {
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 nav {
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8em 1.4em;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 9999;
+  backdrop-filter: blur(99px);
+  opacity: 1;
 }
 
 .brandname {
@@ -49,7 +52,7 @@ nav {
 
 a {
   font-family: "Inter", sans-serif;
-  font-size: 0.9em;
+  font-size: 1.09em;
   font-weight: 500;
   color: var(--text-muted);
   padding-left: 1.4em;
@@ -64,7 +67,7 @@ a::after {
   width: 0;
   height: 3px;
   bottom: -5px;
-  left: 13px;
+  left: 16px;
   background: var(--primary);
   border-radius: 9999px;
   transition: width 0.3s ease;
@@ -73,6 +76,10 @@ a::after {
 a:hover::after,
 a:active::after {
   width: 90%;
+}
+
+a:hover {
+  color: #5f3add;
 }
 
 .navbutton > button {
@@ -86,13 +93,13 @@ a:active::after {
 }
 
 header {
-  background: var(--surface-low);
+  background: #f9f7ff;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   padding: 5rem 1.8rem;
-  padding-bottom: 1rem;
+  padding-bottom: 5rem;
   margin: 0 auto;
   gap: 1rem;
 }
@@ -127,10 +134,10 @@ header {
 }
 
 .herosubtext {
-  font-size: 1em;
+  font-size: 1.4em;
   font-weight: 500;
-  line-height: 1.8;
-  max-width: 550px;
+  line-height: 1.3;
+  max-width: 700px;
   margin-bottom: 2rem;
   color: var(--text-muted);
 }
@@ -178,9 +185,11 @@ header {
 }
 
 #sponsors {
-  background: var(--surface-low);
+  background: #f4f3fb;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--text-muted);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .sponsors {
@@ -201,11 +210,10 @@ header {
   flex-wrap: wrap;
   padding-bottom: 1.5em;
   gap: 3em;
-  width: 500px;
 }
 
 main {
-  background: #faf8ff;
+  background: #f9f7ff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -221,16 +229,19 @@ main {
 }
 
 .maintext > h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
   text-align: center;
   flex-wrap: wrap;
-  max-width: 500px;
-  line-height: 1.1;
+  line-height: 1;
+  padding-top: 2rem;
+  letter-spacing: -0.04em;
 }
 
 .mainsubtext {
+  font-size: 1.1em;
   text-align: center;
   flex-wrap: wrap;
-  max-width: 600px;
+  max-width: 700px;
   line-height: 1.5;
   letter-spacing: 0.04em;
 }
@@ -242,7 +253,7 @@ main {
   grid-template-areas:
     "bg-one bg-one sm-one"
     "sm-two bg-two bg-two";
-  padding-top: 2em;
+  padding: 2em;
   width: 100%;
 }
 
@@ -256,13 +267,17 @@ main {
   margin: 1rem;
   border-radius: 22px;
   grid-area: bg-one;
+  gap: 1rem;
 }
 
 .bigcard-one-text {
+  color: #1a1b21;
   display: flex;
   align-items: start;
   flex-wrap: wrap;
   flex-direction: column;
+  font-size: 1.1rem;
+  font-weight: 300;
 }
 
 .bigcard-one-logo {
@@ -300,6 +315,9 @@ main {
   margin: 1rem;
   border-radius: 22px;
   grid-area: sm-one;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #1a1b21;
 }
 
 .smallcard-one-logo {
@@ -323,10 +341,13 @@ main {
 }
 
 .bigcard-two-text {
+  color: #1a1b21;
   display: flex;
   align-items: start;
   flex-wrap: wrap;
   flex-direction: column;
+  font-size: 1.1rem;
+  font-weight: 300;
 }
 
 .bigcard-two-logo {
@@ -363,6 +384,9 @@ main {
   padding: 2rem;
   margin: 1rem;
   border-radius: 22px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #1a1b21;
   grid-area: sm-two;
 }
 
@@ -375,13 +399,13 @@ main {
 }
 
 .pricing {
-  background: #faf8ff;
+  background: #f4f3fb;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem 2rem;
+  padding: 3.5rem 3rem;
 }
 
 .price-card-container {
@@ -389,6 +413,21 @@ main {
   gap: 1rem;
   width: 100%;
 }
+
+.pricing-text {
+  text-align: center;
+  gap: 1rem;
+}
+
+.pricing-text > h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.pricing-text > p {
+  font-size: 1.1rem;
+  padding-bottom: 3rem;
+}
+
 .price-card {
   position: relative;
   display: flex;
@@ -396,15 +435,18 @@ main {
   justify-content: space-between;
   padding: 2rem 1.5rem;
   background: #ffffff;
+  color: #1a1b21;
   width: 100%;
   border-radius: 24px;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .price-card:hover {
+  transform: scale(1.03);
   border: 2px solid var(--primary);
 }
 
-.price-card:hover::after {
+.price-card-two:hover::after {
   content: "Most Popular";
   position: absolute;
   left: 50%;
@@ -433,6 +475,11 @@ main {
   align-items: center;
   gap: 1rem;
   margin-bottom: 1em;
+}
+
+.price-card-text1 > h3 {
+  font-weight: 550;
+  letter-spacing: 0.04em;
 }
 
 input[type="checkbox"] {
@@ -475,6 +522,7 @@ input[type="checkbox"]::before {
 }
 
 .cta {
+  background: #f9f7ff;
   padding: 5rem 2rem;
 }
 
@@ -502,6 +550,7 @@ input[type="checkbox"]::before {
   letter-spacing: 0.04em;
   max-width: fit-content;
   text-align: center;
+  color: rgb(204, 204, 204);
 }
 
 .cta-btn {
@@ -516,11 +565,22 @@ input[type="checkbox"]::before {
 }
 
 footer {
-  background: #faf8ff;
+  background: white;
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+  padding-left: 0;
+  margin-left: 0;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.footerlinks-container {
   display: flex;
   gap: 1rem;
   padding: 2rem;
   flex-wrap: wrap;
+  padding-left: 0;
 }
 
 .one {
@@ -531,6 +591,9 @@ footer {
 .one > p {
   display: flex;
   flex-wrap: wrap;
+  width: 400px;
+  color: #1a1b21;
+  letter-spacing: 0.01em;
 }
 
 .footer-icon {
@@ -541,8 +604,9 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
-  gap: 1rem;
+  gap: 0.5rem;
+  align-items: flex-start;
+  padding: 2rem;
 }
 
 .footers > h4 {
@@ -551,6 +615,8 @@ footer {
 }
 
 .footers > a {
+  margin: 0;
+  padding: 0;
   text-align: start;
 }
 
@@ -558,4 +624,28 @@ footer {
   width: 0;
   height: 0;
   opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .nav > a {
+    display: none;
+  }
+
+  header {
+    padding-top: 5rem;
+    flex-direction: column;
+  }
+
+  .herobutton {
+    flex-direction: column;
+  }
+
+  .heroimg {
+    min-height: 200px;
+    width: 50%;
+  }
+  .heroimg > img {
+    min-height: 100px;
+    width: 100%;
+  }
 }
