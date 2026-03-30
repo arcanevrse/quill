@@ -97,7 +97,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 5rem 1.8rem;
   padding-bottom: 5rem;
   margin: 0 auto;
@@ -568,9 +568,9 @@ footer {
   background: white;
   display: flex;
   gap: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   padding-left: 0;
-  margin-left: 0;
+  margin: 0;
   flex-wrap: wrap;
   padding-left: 0;
 }
@@ -578,7 +578,7 @@ footer {
 .footerlinks-container {
   display: flex;
   gap: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   flex-wrap: wrap;
   padding-left: 0;
 }
@@ -591,7 +591,7 @@ footer {
 .one > p {
   display: flex;
   flex-wrap: wrap;
-  width: 400px;
+  width: 300px;
   color: #1a1b21;
   letter-spacing: 0.01em;
 }
@@ -632,20 +632,41 @@ footer {
   }
 
   header {
-    padding-top: 5rem;
     flex-direction: column;
+  }
+
+  .herocta {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .herotext {
+    font-size: 1em;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .herosubtext {
+    line-height: normal;
+    width: none;
+    text-align: center;
   }
 
   .herobutton {
     flex-direction: column;
   }
 
-  .heroimg {
-    min-height: 200px;
-    width: 50%;
+  .maincardsection {
+    display: flex;
+    flex-direction: column;
   }
-  .heroimg > img {
-    min-height: 100px;
-    width: 100%;
+  .bigcard-one {
+    flex-direction: column;
+  }
+  .bigcard-two {
+    flex-direction: column;
+  }
+  .price-card-container {
+    flex-direction: column;
   }
 }
