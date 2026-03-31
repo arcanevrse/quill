@@ -374,7 +374,7 @@ main {
 }
 
 .bigcard-one-text1 {
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   padding-bottom: 1rem;
 }
 
